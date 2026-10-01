@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Review Duplicate Inspector</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="page-header">
+        <p class="eyebrow">GANGNAM BEAUTY GUIDE · INTERNAL PROTOTYPE</p>
+        <h1>Review Duplicate Inspector</h1>
+        <p class="intro">Flags candidate duplicate reviews before publication or manual moderation.</p>
+      </header>
+
+      <section class="metrics" aria-label="Scan summary">
+        <div class="metric"><span id="review-count">—</span><small>reviews scanned</small></div>
+        <div class="metric"><span id="pair-count">—</span><small>pairs compared</small></div>
+        <div class="metric alert"><span id="likely-count">—</span><small>likely duplicates</small></div>
+        <div class="metric"><span id="manual-count">—</span><small>manual-review candidates</small></div>
+      </section>
+
+      <section class="toolbar" aria-label="Candidate filters">
+        <div class="filter-group" role="group" aria-label="Filter candidates">
+          <button class="filter active" data-filter="likely">Likely duplicate</button>
+          <button class="filter" data-filter="manual">Review manually</button>
+          <button class="filter" data-filter="all">All candidates</button>
+        </div>
+        <p id="result-count" class="result-count"></p>
+      </section>
+
+      <section id="candidates" class="candidates" aria-live="polite"></section>
+      <p class="footnote">Demo data: public Gangnam Beauty Guide review snapshot. Production integration would run against the ingestion/database layer.</p>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
